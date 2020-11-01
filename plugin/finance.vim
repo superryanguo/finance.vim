@@ -39,7 +39,11 @@ function! finance#format(format_string, object)
         if exp != ''
             let key = substitute(exp, '[{}]', '', 'g')
             if type(get(a:object, key, '')) != 1
-                let result = substitute(result, exp, string(get(a:object, key, '')), '')
+                if key == "percent"
+                  let result = substitute(result, exp, string(get(a:object, key, '')*100), '')
+                else
+                  let result = substitute(result, exp, string(get(a:object, key, '')), '')
+                endif
             else
                 let result = substitute(result, exp, get(a:object, key, ''), '')
             endif
