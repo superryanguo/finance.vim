@@ -1,5 +1,6 @@
 " finance.vim - Check Stocks and Exchange Rates in Vim
 " Maintainer: kf <7kfpun@gmail.com>
+" Update: ryanguo
 
 scriptencoding utf-8
 
@@ -19,7 +20,7 @@ endfunction
 
 call s:check_defined('g:finance_watchlist', ['AAPL', 'GOOG', 'MSFT', 'AMZN', 'FB'])
 call s:check_defined('g:finance_format', '{1. symbol}: {2. price} ({3. volume})')
-call s:check_defined('g:finance_cn_format', '{name}: {price} ({updown}/{percent}%)')
+call s:check_defined('g:finance_cn_format', '{name}: {price} ({updown} {arrow} /{percent}%)')
 call s:check_defined('g:finance_separator', "\n")  " have to be double quotes
 
 call s:check_defined('g:exchange_currency', ['BTC', 'USD'])
